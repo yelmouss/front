@@ -4,18 +4,22 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
+import Login from "./components/auth/Login";
+import ProtectedPage from "./components/auth/protectedPage";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen ">
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="About" element={<About />} />
+          <Route path="login" element={<Login />} />
+          <Route path="dashboard" element={<ProtectedPage />} />
         </Routes>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

@@ -121,8 +121,8 @@ function Header() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <>
+            {pages.map((page, index) => (
+              <div key={index}>
                 {page === "Home" ? (
                   <Link to="/" className="ml-2 font-bold">
                     {" "}
@@ -133,7 +133,7 @@ function Header() {
                     {page}
                   </Link>
                 )}
-              </>
+              </div>
             ))}
           </Box>
 
@@ -159,8 +159,8 @@ function Header() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+              {settings.map((setting , index) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu} key={index}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
