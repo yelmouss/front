@@ -3,8 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
-
 function Login() {
 
 const rediriger = useNavigate()
@@ -36,10 +34,10 @@ const rediriger = useNavigate()
       localStorage.setItem('token', response.data.token)
 
       rediriger('/dashboard')
-    //   alert("Connected successfully");
+      alert("Connected successfully");
     } catch (e) {
       console.error(e);
-    //   alert("connexion error check console");
+      alert("connexion error check console" + e );
     }
   };
 
@@ -61,7 +59,6 @@ const rediriger = useNavigate()
             value={formData.password}
             onChange={handleChange}
           />
-
           <button onClick={handleLogin}>Login</button>
         </form>
       </div>
@@ -70,3 +67,4 @@ const rediriger = useNavigate()
 }
 
 export default Login;
+ 
