@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen ">
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="About" element={<About />} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="dashboard" element={<ProtectedPage />} />
         </Routes>
 
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );
